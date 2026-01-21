@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slum03 Blog</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a0f0a;
+            color: #e8ffe8;
+        }
+
+        header {
+            background: #0f3d0f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #a4ff9a;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav li {
+            cursor: pointer;
+            padding: 8px 14px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        nav li:hover {
+            background: #145c14;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .tab {
+            display: none;
+            animation: fadeIn 0.25s ease-in;
+        }
+
+        .tab.active {
+            display: block;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .media-item {
+            background: #113611;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Slum03</h1>
+        <nav>
+            <ul>
+                <li onclick="showTab('home')">Home</li>
+                <li onclick="showTab('media')">Media</li>
+                <li onclick="showTab('music')">Music</li>
+                <li onclick="showTab('more')">More</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="tab active">
+            <h2>Welcome to Slum03</h2>
+            <p>Yes it is me from instagram</p>
+        </section>
+
+        <section id="media" class="tab">
+            <h2>Media</h2>
+            <p>Pictures and videos that I take.</p>
+            <img src=""
+            <div class="media-grid">
+                <div class="media-item">No media yet.</div>
+            </div>
+        </section>
+
+        <section id="music" class="tab">
+            <h2>Music</h2>
+            <h3>My Beats</h3>
+            <p>Add your beat uploads, embeds, or links here.</p>
+
+            <h3>Music I'm Listening To</h3>
+            <p>Add your recent favorites here.</p>
+        </section>
+
+        <section id="more" class="tab">
+            <h2>More</h2>
+            <p>Miscellaneous stuff. Random thoughts, ideas, experiments, notes — whatever you want.</p>
+        </section>
+    </main>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const selected = document.getElementById(tabId);
+            if (selected) {
+                selected.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
